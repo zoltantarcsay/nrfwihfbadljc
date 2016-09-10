@@ -1,0 +1,35 @@
+<html>
+    <head>
+    	<style>
+    		h1 {
+    			font-family: "Helvetica-Neue", Helvetica, Arial, sans-serif;
+    			font-weight: 200;
+    			text-align: center;
+    			color: #666;
+    			margin-top: -1em;
+    			font-size: 2em;
+    			position: relative;
+    			top: 50%;
+    		}
+    		
+    		#days-left {
+    			color: #9d0000;
+    			font-weight: bold;
+    		}
+       	</style>
+    </head>
+    <body>
+        <h1>
+        	Az ön által megadott nászajándékkód [nfrwihfbadljc] <span id="wrapper"><span id="days-left"></span> nap múlva lesz</span> beváltható.
+        </h1>
+        <script>
+            var now = new Date();
+            var redeemDate = new Date("2016-09-25");
+            var daysLeft = Math.floor((redeemDate - now) / 24 / 3600 / 1000);
+            document.querySelector("#days-left").innerText = daysLeft >= 0 ? daysLeft : 0;
+            if (daysLeft < 0) {
+            	document.querySelector("#wrapper").style.display = "none";
+            }
+        </script>
+    </body>
+</html>
